@@ -3,7 +3,10 @@ Recreating early search engine technology using Go.
 
 ## repo notes
 
-This repo uses [Taskfile](https://taskfile.dev/) for task automation.
+- This repo uses [Taskfile](https://taskfile.dev/) for task automation.
+- This repo uses a [dev-container](https://code.visualstudio.com/docs/remote/containers).
+  This allows easy setup of a dev environment for anyone, regardless of their OS.
+  Also, it standardizes web-based development via Github's "Codespaces" feature.
 
 ### branches
 - **main** is for production deployment. It is the default branch and is protected.

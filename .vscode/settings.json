@@ -12,7 +12,8 @@
     // Taskfile
       "taskfile",
       "cmds",
-    // dev-container
+    // Github
+      "codespaces",
       "devcontainer",
       "devcontainers",
       "eitsupi", // part of Taskfile feature name
