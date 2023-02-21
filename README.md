@@ -1,9 +1,6 @@
 # go-web-search
 Recreating early search engine technology using Go.
 
-## tasks
-- init repo with config files
-
 ## repo notes
 
 This repo uses [Taskfile](https://taskfile.dev/) for task automation.
