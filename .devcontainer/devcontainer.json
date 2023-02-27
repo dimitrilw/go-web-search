@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+    "name": "go-web-search",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "vscode",
+    "workspaceFolder": "/workspace",
+    // use root so that postCreateCommand files can use apt
+    "remoteUser": "root",
+
+    "features": {
+        "ghcr.io/eitsupi/devcontainer-features/go-task:1": {}
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // cSpell: disable ...most of these extensions aren't "words" per se
+                "streetsidesoftware.code-spell-checker", // cSpell
+                "jinhyuk.replace-curly-quotes",
+                "redhat.vscode-yaml",
+                "EditorConfig.EditorConfig"
+                // cSpell: enable ...turn the spell-check back on
+            ]
+        }
+    },
+
+    // runs script after the vscode container is created
+    "postCreateCommand": "sh ./.devcontainer/postCreateCommand.sh",
+
+    // automatically stop the containers
+    "shutdownAction": "stopCompose"
+}

@@ -1,0 +1,21 @@
+{
+  // cSpell info: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+  "cSpell.ignorePaths": [
+    ".git", // ignore the .git directory
+  ],
+  "cSpell.words": [
+    // go aka golang
+      "benchmem", // keep me? remove me?? choices...
+      "gopls", // keep me? remove me?? choices...
+    // packages
+      "REPLACE ME WITH PACKAGES",
+    // Taskfile
+      "taskfile",
+      "cmds",
+    // Github
+      "codespaces",
+      "devcontainer",
+      "devcontainers",
+      "eitsupi", // part of Taskfile feature name
+  ],
+}
