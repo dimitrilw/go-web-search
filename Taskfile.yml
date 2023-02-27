@@ -12,3 +12,8 @@ tasks:
     desc: Runs the app.
     cmds:
       - go run main.go
+  
+  cdb:start:
+    desc: Starts CockroachDB.
+    cmds:
+      - cockroach start-single-node --insecure

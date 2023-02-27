@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  vscode:
+    image: mcr.microsoft.com/devcontainers/go:0-1.19
+    volumes:
+      - ..:/workspace
+    user: vscode
+    command: sleep infinity
+
+  # TODO: add cockroachdb container
+
+  # TODO: add elasticsearch container
