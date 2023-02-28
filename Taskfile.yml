@@ -12,8 +12,33 @@ tasks:
     desc: Runs the app.
     cmds:
       - go run main.go
-  
-  cdb:start:
-    desc: Starts CockroachDB.
+
+  # all "host" Tasks should be run from raw-metal,
+  # not from inside the Docker Containers
+  host:crdb:CHECK-FOR-CONTAINER:
+    # this command is for reuse by other commands
     cmds:
-      - cockroach start-single-node --insecure
+      - |
+        docker container inspect cockroachdb > /dev/null ||
+        ( echo "ERROR -- must run in host terminal" && exit 1 )
+    silent: true
+
+  host:setup:
+    desc: Initialize development environment.
+    cmds:
+      - task: host:crdb:init
+
+
+  host:crdb:init:
+    desc: Initialize CockroachDB.
+    cmds:
+      - task: host:crdb:CHECK-FOR-CONTAINER
+      - |
+        docker exec -it cockroachdb sh -c \
+        "/cockroach/cockroach sql --insecure < /sql/create-linkgraph-database.sql"
+      - |
+        docker exec -it cockroachdb sh -c \
+        "/cockroach/cockroach sql --insecure < /sql/create-links-table.sql"
+      - |
+        docker exec -it cockroachdb sh -c \
+        "/cockroach/cockroach sql --insecure < /sql/create-edges-table.sql"

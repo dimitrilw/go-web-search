@@ -2,7 +2,13 @@ echo "my-postCreateCommand.sh, start"
 
 echo "install CLI tools"
 apt update
-apt install -y bat exa fd-find ripgrep
+apt install -y \
+    vim \
+    iputils-ping \
+    bat \
+    exa \
+    fd-find \
+    ripgrep
 
 echo "local aliases for commands"
 mkdir -p ~/.local/bin

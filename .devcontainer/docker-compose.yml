@@ -1,13 +1,27 @@
 version: "3.7"
 
 services:
-  vscode:
+  app:
+    # the "app" service is for VS-Code's devcontainer,
+    # which is also the home for our Go app's code
     image: mcr.microsoft.com/devcontainers/go:0-1.19
+    container_name: app
     volumes:
       - ..:/workspace
     user: vscode
     command: sleep infinity
+    environment:
+      - DEFAULT_CDB_DSN="postgresql://root@cockroachdb:26257/linkgraph?sslmode=disable"
+      - CDB_DSN="${CDB_DSN:-DEFAULT_CDB_DSN}"
 
-  # TODO: add cockroachdb container
+      #- MORE_ENV_VARS_HERE
 
-  # TODO: add elasticsearch container
+  cockroachdb:
+    image: cockroachdb/cockroach:latest-v22.2
+    container_name: cockroachdb
+    command: start-single-node --insecure
+    ports:
+      - 26257:26257
+      - 8080:8080
+    volumes:
+      - "${PWD}/cockroachdb/cockroach-data:/cockroach/cockroach-data"
