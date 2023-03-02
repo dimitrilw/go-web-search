@@ -1,7 +1,7 @@
 # go-web-search
 Recreating early search engine technology using Go.
 
-## setup
+## setup dev environment
 
 - Clone repo.
 - Install [Taskfile](https://taskfile.dev/) for task automation.
