@@ -4,6 +4,7 @@
     ".git", // ignore the .git directory
   ],
   "cSpell.words": [
+    "linkgraph",
     // go aka golang
       "benchmem", // keep me? remove me?? choices...
       "gopls", // keep me? remove me?? choices...
@@ -17,5 +18,8 @@
       "devcontainer",
       "devcontainers",
       "eitsupi", // part of Taskfile feature name
+    // CockroachDB
+      "cockroachdb",
+      "crdb",
   ],
 }

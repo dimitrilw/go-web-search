@@ -3,7 +3,7 @@
 {
     "name": "go-web-search",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "vscode",
+    "service": "app",
     "workspaceFolder": "/workspace",
     // use root so that postCreateCommand files can use apt
     "remoteUser": "root",

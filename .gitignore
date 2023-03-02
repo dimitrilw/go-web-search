@@ -4,16 +4,15 @@
 
 *.log
 __temp/
-.env
 .DS_Store
-secrets/
-.devcontainer/my-postCreateCommand.sh
+**/*.env
 
 ################################################################################
 # repo specific ignore entries
 ################################################################################
 
-cockroach-data/
+.devcontainer/my-postCreateCommand.sh
+cockroachdb/cockroach-data/
 
 ################################################################################
 # Github default for Go projects
